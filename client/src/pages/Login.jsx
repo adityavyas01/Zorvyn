@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PageLayout from "../components/PageLayout.jsx";
 import { useAuth } from "../hooks/useAuth.jsx";
 import { loginUser } from "../services/authService.js";
@@ -158,6 +158,17 @@ function Login() {
       </form>
 
       {statusMessage && <p className="mt-4 text-sm text-slate-700 dark:text-slate-200">{statusMessage}</p>}
+
+      <p className="mt-5 text-sm text-slate-600 dark:text-slate-300">
+        Need an account?{" "}
+        <Link
+          to={ROUTES.register}
+          className="font-semibold text-cyan-700 underline decoration-cyan-500 underline-offset-2 transition hover:text-cyan-600 dark:text-cyan-300 dark:hover:text-cyan-200"
+        >
+          Create one
+        </Link>
+        .
+      </p>
     </PageLayout>
   );
 }

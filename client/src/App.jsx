@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
 import Records from "./pages/Records.jsx";
 import { ROUTES } from "./utils/constants.js";
 
@@ -10,6 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Navigate to={ROUTES.login} replace />} />
       <Route path={ROUTES.login} element={<Login />} />
+      <Route path={ROUTES.register} element={<Register />} />
       <Route
         path={ROUTES.dashboard}
         element={
