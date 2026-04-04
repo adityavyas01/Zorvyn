@@ -370,7 +370,7 @@
     },
     {
       "key": "analystEmail",
-      "value": "analyst.demo@zorvyn.local",
+      "value": "analyst.demo@example.com",
       "type": "string"
     },
     {
@@ -380,7 +380,7 @@
     },
     {
       "key": "adminEmail",
-      "value": "admin.demo@zorvyn.local",
+      "value": "admin.demo@example.com",
       "type": "string"
     },
     {

@@ -250,6 +250,23 @@ npm run seed
 
 The seed script is idempotent and will skip existing demo entries to avoid duplicates.
 
+Default seeded demo users:
+- Admin: `admin.demo@example.com` / `AdminDemo123!`
+- Analyst: `analyst.demo@example.com` / `AnalystDemo123!`
+- Viewer: `viewer.demo@example.com` / `ViewerDemo123!`
+
+For production databases (for example, Render free tier without shell access), run seed from your machine by pointing `DB_URL` to the production MongoDB URI:
+
+```powershell
+$env:DB_URL = "<your-production-mongodb-uri>"
+$env:NODE_ENV = "production"
+npm run seed
+Remove-Item Env:DB_URL
+Remove-Item Env:NODE_ENV
+```
+
+If you seed production with demo credentials, rotate/remove these accounts afterward.
+
 ## Role-Based Access Matrix
 
 | Action | Viewer | Analyst | Admin |
