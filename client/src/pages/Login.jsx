@@ -29,7 +29,7 @@ function Login() {
   const navigate = useNavigate();
   const { saveSession, isAuthenticated, logout, user } = useAuth();
   const [formState, setFormState] = useState({
-    email: "analyst.demo@zorvyn.local",
+    email: "analyst.demo@example.com",
     password: "AnalystDemo123!",
   });
   const [fieldErrors, setFieldErrors] = useState({

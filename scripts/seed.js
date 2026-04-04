@@ -10,19 +10,19 @@ const SALT_ROUNDS = 10;
 const DEMO_USERS = [
   {
     name: "Priya Sharma",
-    email: "admin.demo@zorvyn.local",
+    email: "admin.demo@example.com",
     password: "AdminDemo123!",
     role: "Admin",
   },
   {
     name: "Rohan Mehta",
-    email: "analyst.demo@zorvyn.local",
+    email: "analyst.demo@example.com",
     password: "AnalystDemo123!",
     role: "Analyst",
   },
   {
     name: "Neha Verma",
-    email: "viewer.demo@zorvyn.local",
+    email: "viewer.demo@example.com",
     password: "ViewerDemo123!",
     role: "Viewer",
   },
@@ -30,7 +30,7 @@ const DEMO_USERS = [
 
 const DEMO_RECORDS = [
   {
-    ownerEmail: "analyst.demo@zorvyn.local",
+    ownerEmail: "analyst.demo@example.com",
     amount: "6200.00",
     type: "income",
     category: "Salary",
@@ -38,7 +38,7 @@ const DEMO_RECORDS = [
     date: "2026-03-01T09:00:00.000Z",
   },
   {
-    ownerEmail: "analyst.demo@zorvyn.local",
+    ownerEmail: "analyst.demo@example.com",
     amount: "1850.00",
     type: "income",
     category: "Freelance",
@@ -46,7 +46,7 @@ const DEMO_RECORDS = [
     date: "2026-03-11T14:30:00.000Z",
   },
   {
-    ownerEmail: "analyst.demo@zorvyn.local",
+    ownerEmail: "analyst.demo@example.com",
     amount: "249.75",
     type: "expense",
     category: "Groceries",
@@ -54,7 +54,7 @@ const DEMO_RECORDS = [
     date: "2026-03-05T18:10:00.000Z",
   },
   {
-    ownerEmail: "analyst.demo@zorvyn.local",
+    ownerEmail: "analyst.demo@example.com",
     amount: "92.40",
     type: "expense",
     category: "Transport",
@@ -62,7 +62,7 @@ const DEMO_RECORDS = [
     date: "2026-03-09T07:45:00.000Z",
   },
   {
-    ownerEmail: "analyst.demo@zorvyn.local",
+    ownerEmail: "analyst.demo@example.com",
     amount: "1299.00",
     type: "expense",
     category: "Rent",
@@ -70,7 +70,7 @@ const DEMO_RECORDS = [
     date: "2026-03-02T08:30:00.000Z",
   },
   {
-    ownerEmail: "analyst.demo@zorvyn.local",
+    ownerEmail: "analyst.demo@example.com",
     amount: "58.90",
     type: "expense",
     category: "Utilities",
@@ -78,7 +78,7 @@ const DEMO_RECORDS = [
     date: "2026-03-13T10:15:00.000Z",
   },
   {
-    ownerEmail: "admin.demo@zorvyn.local",
+    ownerEmail: "admin.demo@example.com",
     amount: "4100.00",
     type: "income",
     category: "Consulting",
@@ -86,7 +86,7 @@ const DEMO_RECORDS = [
     date: "2026-03-07T12:00:00.000Z",
   },
   {
-    ownerEmail: "admin.demo@zorvyn.local",
+    ownerEmail: "admin.demo@example.com",
     amount: "320.00",
     type: "expense",
     category: "Software",
