@@ -1,5 +1,18 @@
 # Zorvyn Full-Stack Financial System
 
+## 🚀 Quick Overview
+
+- Full-stack financial system (Node.js + React)
+- JWT authentication plus RBAC (`Viewer`, `Analyst`, `Admin`)
+- Redis caching plus BullMQ queue-backed audit processing
+- Idempotent APIs and production-ready backend safeguards
+- Deployed via Render (backend) plus Vercel (frontend)
+
+## 🌐 Live Demo
+
+Frontend: https://zorvyn-frontend-gray.vercel.app  
+Backend: https://zorvyn-backend-15a2.onrender.com
+
 A secure and extensible full-stack financial records system with a Node.js backend and React frontend, role-based access control (RBAC), JWT authentication, Redis-backed performance features, and queue-driven audit processing.
 
 ## Description
@@ -52,6 +65,18 @@ root/
 - Degraded mode fallbacks when Redis is down
 - Swagger UI at `/api-docs`
 - Demo data seeding via `npm run seed`
+
+## ⚡ Quick Start
+
+```bash
+npm install
+npm --prefix client install
+npm run dev:all
+```
+
+Default local URLs:
+- Backend API: `http://localhost:3000`
+- Frontend app: `http://localhost:5173`
 
 ## Full-Stack Quick Start
 
@@ -298,7 +323,8 @@ Authorization: Bearer <token>
 - `401 Token expired`
 - `403 Insufficient permissions` (role mismatch)
 
-## Advanced Features
+<details>
+<summary><strong>Advanced Features</strong></summary>
 
 ### RBAC
 
@@ -325,6 +351,8 @@ Audit log events are queued to BullMQ and processed by an audit worker when Redi
 
 Test suite uses MongoMemoryServer for isolated, repeatable integration tests without touching local dev data.
 
+</details>
+
 ## Testing
 
 Run all tests:
@@ -344,7 +372,8 @@ Current suites include:
 - Records tests (success + failure + idempotency)
 - RBAC matrix tests (Viewer/Analyst/Admin)
 
-## Sample Requests (curl)
+<details>
+<summary><strong>Sample Requests (curl)</strong></summary>
 
 ### Register
 
@@ -405,9 +434,14 @@ curl -X GET http://localhost:3000/stats/summary \
 curl http://localhost:3000/api-docs
 ```
 
-## Notes
+</details>
+
+<details>
+<summary><strong>Notes</strong></summary>
 
 - Record `amount` is stored as Decimal128 and returned as string in many responses.
 - Deletes are soft deletes (`deleted=true`) and excluded from normal read queries.
 - If Redis is unavailable and `REDIS_DEGRADED_MODE=true`, the server still runs with in-memory fallback behavior for cache/idempotency and direct audit writes.
 - Validation errors are returned in the same standardized API error envelope used across the app.
+
+</details>
