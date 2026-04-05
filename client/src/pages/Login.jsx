@@ -29,8 +29,8 @@ function Login() {
   const navigate = useNavigate();
   const { saveSession, isAuthenticated, logout, user } = useAuth();
   const [formState, setFormState] = useState({
-    email: "analyst.demo@example.com",
-    password: "AnalystDemo123!",
+    email: "",
+    password: "",
   });
   const [fieldErrors, setFieldErrors] = useState({
     email: "",
@@ -98,7 +98,7 @@ function Login() {
         replace: true,
       });
     } catch (error) {
-      const message = error?.response?.data?.error || "Login failed. Check credentials and backend status.";
+      const message = error?.response?.data?.error || "Invalid email or password. Please try again.";
       setStatusMessage(message);
       toast.error(message);
     } finally {
@@ -115,7 +115,7 @@ function Login() {
       <div className="mx-auto w-full max-w-lg">
         <div className="mb-5 rounded-2xl border border-slate-200/80 bg-white/70 p-4 dark:border-slate-700 dark:bg-slate-900/60">
           <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-            Zorvyn - Financial Management System
+            Zorvyn — Financial Management System
           </h3>
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
             Track records, analyze trends, and manage data with role-based access.
