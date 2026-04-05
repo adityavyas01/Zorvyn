@@ -25,6 +25,33 @@ const getValidationErrors = ({ email, password }) => {
   return errors;
 };
 
+const getLoginErrorMessage = (error) => {
+  const statusCode = error?.response?.status;
+  const apiMessage = `${error?.response?.data?.error || ""}`.trim();
+
+  if (!error?.response) {
+    return "Unable to reach the server. Check your connection and try again.";
+  }
+
+  if (statusCode === 401) {
+    return apiMessage || "Invalid email or password. Please try again.";
+  }
+
+  if (statusCode === 400) {
+    return apiMessage || "Please enter a valid email and password.";
+  }
+
+  if (statusCode === 429) {
+    return apiMessage || "Too many login attempts. Please try again in 15 minutes.";
+  }
+
+  if (statusCode >= 500) {
+    return "Login service is temporarily unavailable. Please try again shortly.";
+  }
+
+  return apiMessage || "Unable to sign in right now. Please try again.";
+};
+
 function Login() {
   const navigate = useNavigate();
   const { saveSession, isAuthenticated, logout, user } = useAuth();
@@ -98,7 +125,7 @@ function Login() {
         replace: true,
       });
     } catch (error) {
-      const message = error?.response?.data?.error || "Invalid email or password. Please try again.";
+      const message = getLoginErrorMessage(error);
       setStatusMessage(message);
       toast.error(message);
     } finally {
